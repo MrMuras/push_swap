@@ -6,25 +6,21 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:00:08 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/13 21:30:06 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/15 14:23:32 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_str_is_numeric(char *str)
+char	**parse_arguments(int argc, char *argv[])
 {
-	if (*str == '-' || *str == '+')
-		str++;
-	if (!str)
-		return (0);
-	while (*str)
+	if (!check_errors(argc, argv))
 	{
-		if (!ft_isdigit(*str))
-			return (0);
-		str++;
+		if (argc == 2)
+			free_double_array(argv, argc);
+		msg_err("Invalid integer/s\n");
 	}
-	return (1);
+	return (argv);
 }
 
 int	check_errors(int argc, char *argv[])
@@ -62,4 +58,31 @@ int	number_of_strings(char **ss)
 	while (ss[i])
 		i++;
 	return (i);
+}
+
+t_list	*create_list(int argc, char **args)
+{
+	t_list	*a;
+	int i;
+
+	a = NULL;
+	i = 0;
+	while (i < argc)
+		ft_lstadd_back(&a, ft_lstnew((void *)ft_atoi(args[i++])));
+	return (a);
+}
+
+int	ft_str_is_numeric(char *str)
+{
+	if (*str == '-' || *str == '+')
+		str++;
+	if (!str)
+		return (0);
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
 }
