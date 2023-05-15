@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:59:01 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/14 20:06:33 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:00:21 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ char	**parse_arguments(int argc, char *argv[]);
 t_list	*create_list(int argc, char **args);
 
 //utils
-void	free_double_array(char **str, int j);
+void	free_double_array(int j, char **str);
 void	free_list(t_list *list);
 void	msg_err(char *str);
+void	free_pointer(char * str);
 
 #endif

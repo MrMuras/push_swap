@@ -6,17 +6,29 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:39:01 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/14 20:21:29 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:00:15 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_double_array(char **str, int j)
+void	free_double_array(int j, char **str)
 {
+	if (str == NULL)
+		return ;
 	while (j-- > 0)
-		free(str[j]);
-	free (str);
+		free_pointer(str[j]);
+	free(str);
+	str = NULL;
+}
+
+void	free_pointer(char * str)
+{
+	if (str != NULL)
+	{
+		free(str);
+		str = NULL;
+	}
 }
 
 void	free_list(t_list *list)
