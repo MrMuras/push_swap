@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:59:04 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/15 20:53:09 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:08:14 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,23 @@
 
 int	main(int argc, char *argv[])
 {
-	t_list *a;
+	t_list	*a;
 	char **args;
 
-	args = NULL;
 	if (argc < 2) 
 		msg_err("At least two arguments\n");
-	args = parse_arguments(argc, argv);
-	a = create_list(argc, args);
+	if (argc == 2)
+	{
+		argv = parse_arguments(&argc, argv, &args);
+		a = create_list(argc, argv);
+		free_double_array(argc, args);
+	}
+	else
+	{
+		argv = parse_arguments(&argc, argv, &args);
+		a = create_list(argc, argv);
+	}
+
 	// TODO: Check if stack A is sorted and proceed with the sorting algorithm
 	free_list(a);
 	return (0);

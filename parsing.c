@@ -6,30 +6,32 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:00:08 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/15 21:08:27 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:08:56 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**parse_arguments(int argc, char *argv[])
+char	**parse_arguments(int *argc, char *argv[], char ***args)
 {
-	char	**args;
-	int		strings;
+	int		number_of_arguments;
 
-	args = argv;
-	if (argc == 2) 
+	*args = argv;
+	if (*argc == 2) 
 	{
-		args = ft_split(argv[1], ' ');
-		argc = number_of_strings(args);
+		*args = ft_split(argv[1], ' ');
+		number_of_arguments = number_of_strings(*args);
+		if (!check_errors(number_of_arguments, *args, 0))
+		{
+			free_double_array(number_of_arguments, *args);
+			msg_err("Invalid integer/s\n");
+		}
 	}
-	if (!check_errors(argc, argv))
-	{
-		ft_printf("if !check_errors\n");
-		free_double_array(argc, argv);
+	else if (!check_errors(*argc, *args, 1))
 		msg_err("Invalid integer/s\n");
-	}
-	return (args);
+	if (*argc == 2)
+			*argc = number_of_arguments;
+	return (*args);
 }
 
 int	check_errors(int argc, char *argv[], int i)

@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:59:01 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/15 15:00:21 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:41:59 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 # include "printf/libft/libft.h"
 
 //parsing
-int		check_errors(int argc, char *argv[]);
+int		check_errors(int argc, char *argv[], int i);
 int		ft_str_is_numeric(char *str);
 int		number_of_strings(char **ss);
-char	**parse_arguments(int argc, char *argv[]);
+char	**parse_arguments(int *argc, char *argv[], char ***args);
 t_list	*create_list(int argc, char **args);
 
 //utils
