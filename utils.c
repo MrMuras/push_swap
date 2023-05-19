@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:39:01 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/16 18:17:19 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/19 21:07:53 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,29 @@ void	msg_err(char *str)
 	exit(1);
 }
 
-void	print_list(t_list *list)
+void	print_list(t_list *a, t_list *b)
 {
 	t_list	*current;
 	int		*num;
 
-	current = list;
+	current = a;
+	if (a)
+		ft_printf("--- STACK A ---\n\n");
 	while (current != NULL)
 	{
 		num = (int *)current->content;
-		printf("List content: %d\n", *num);
+		ft_printf("a content: %d\n", *num);
 		current = current->next;
 	}
-	printf("\n");
+	ft_printf("\n");
+	current = b;
+	if (b)
+		ft_printf("--- STACK B ---\n\n");
+	while (current != NULL)
+	{
+		num = (int *)current->content;
+		ft_printf("b content: %d\n", *num);
+		current = current->next;
+	}
+	ft_printf("\n");
 }
