@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:59:01 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/19 20:59:55 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/20 20:12:21 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,6 @@ void	rrr(t_list **a, t_list **b);
 void	pa(t_list **a, t_list **b);
 void	pb(t_list **a, t_list **b);
 
+//sorting
+int	is_sorted(t_list *a);
 #endif
