@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:59:01 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/20 20:12:21 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 01:19:03 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,30 @@ void	free_pointer(char *str);
 void	print_list(t_list *a, t_list *b);
 
 //swap
-void	sa(t_list **a);
-void	sb(t_list **b);
+void	sa(t_list **a, int i);
+void	sb(t_list **b, int i);
 void	ss(t_list **a, t_list **b);
 
 //rotate
-void	ra(t_list **a);
-void	rb(t_list **b);
+void	ra(t_list **a, int i);
+void	rb(t_list **b, int i);
 void	rr(t_list **a, t_list **b);
 
 //reverse rotate
-void	rra(t_list **a);
-void	rrb(t_list **b);
+void	rra(t_list **a, int i);
+void	rrb(t_list **b, int i);
 void	rrr(t_list **a, t_list **b);
 
 //push
 void	pa(t_list **a, t_list **b);
 void	pb(t_list **a, t_list **b);
 
-//sorting
+//sorting_utilc
 int	is_sorted(t_list *a);
+int count_digits(int max_value);
+int find_max(t_list *stack);
+
+//sorting
+
+
 #endif

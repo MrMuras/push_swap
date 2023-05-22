@@ -6,13 +6,13 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 18:38:10 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/19 21:13:59 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 01:18:05 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_list **a)
+void	rra(t_list **a, int i)
 {
 	t_list	*second_last;
 	t_list	*last;
@@ -29,10 +29,11 @@ void	rra(t_list **a)
 	second_last->next = NULL;
 	last->next = *a;
 	*a = last;
-	ft_printf("rra\n");
+	if (i == 1)
+		ft_printf("rra\n");
 }
 
-void	rrb(t_list **b)
+void	rrb(t_list **b, int i)
 {
 	t_list	*second_last;
 	t_list	*last;
@@ -49,12 +50,13 @@ void	rrb(t_list **b)
 	second_last->next = NULL;
 	last->next = *b;
 	*b = last;
-	ft_printf("rrb\n");
+	if (i == 1)
+		ft_printf("rrb\n");
 }
 
 void	rrr(t_list **a, t_list **b)
 {
-	rra(a);
-	rrb(b);
+	rra(a, 0);
+	rrb(b, 0);
 	ft_printf("rrr\n");
 }

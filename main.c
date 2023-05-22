@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:59:04 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/20 20:08:22 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 01:19:20 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,11 @@ int	main(int argc, char *argv[])
 		argv = parse_arguments(&argc, argv, &args);
 		a = create_list(argc - 1, argv + 1);
 	}
-	if (is_sorted(a))
-		return (0);
-	b = NULL;
-	print_list(a,b);
-	rra(&a);
-	print_list(a,b);
-	pb(&a,&b);
-	pb(&a,&b);
-	pb(&a,&b);
-	print_list(a,b);
-	ss(&a, &b);
-	print_list(a,b);
-	// TODO: Check if stack A is sorted and proceed with the sorting algorithm
+	if (!is_sorted(a))
+	{
+		b = NULL;
+		print_list(a,b);
+	}
 	freeab(&a, &b);
 	return (0);
 }

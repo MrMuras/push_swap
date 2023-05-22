@@ -4,7 +4,7 @@ CFLAGS = -Wextra -Wall -Werror
 NAME = push_swap
 PRINTF = ./printf/libprintf.a
 
-SRCS = main.c parsing.c utils.c rotate.c reverserotate.c swap.c push.c sorting.c
+SRCS = main.c parsing.c utils.c rotate.c reverserotate.c swap.c push.c sorting_utils.c sorting.c
 OBJS = $(SRCS:.c=.o)
 
 INC_FLAGS = -I./printf
