@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:59:01 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/23 05:28:56 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:44:26 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,7 @@ void	two(t_list **a);
 void	three(t_list **a);
 void	radix_sort(t_list **a, t_list **b);
 void	push_swap(t_list **a, t_list **b);
+int		find_min(t_list *stack);
+void	sort_five(t_list **a, t_list **b);
 
 #endif

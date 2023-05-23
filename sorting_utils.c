@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 21:15:46 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/23 20:09:59 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:50:40 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,18 @@ int	list_len(t_list *list)
 	if (list)
 		return (list_len(list->next) + 1);
 	return (0);
+}
+
+int	find_min(t_list *stack)
+{
+	int	min;
+
+	min = stack->content;
+	while (stack)
+	{
+		if (stack->content < min)
+			min = stack->content;
+		stack = stack->next;
+	}
+	return (min);
 }

@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:29:26 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/23 20:23:37 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:51:17 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,35 @@ void	push_swap(t_list **a, t_list **b)
 
 	len = list_len(*a);
 	if (len == 2)
-	{
 		two(a);
-		return ;
-	}
 	else if (len == 3)
-	{
 		three(a);
-		return ;
-	}
+	else if (len == 5)
+		sort_five(a, b);
 	else
 		radix_sort(a, b);
+}
+
+void	sort_five(t_list **a, t_list **b)
+{
+	int	min1;
+	int	min2;
+
+	min1 = find_min(*a);
+	pb(a, b);
+	min2 = find_min(*a);
+	pb(a, b);
+	three(a);
+	if ((*b)->content == min1)
+	{
+		pa(a, b);
+		pa(a, b);
+	}
+	else
+	{
+		pa(a, b);
+		ra(a, 1);
+		pa(a, b);
+		rra(a, 1);
+	}
 }
