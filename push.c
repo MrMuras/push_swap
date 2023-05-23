@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 20:39:11 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/22 16:41:04 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 05:06:59 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	pa(t_list **a, t_list **b)
 {
 	t_list	*firstb;
 
+	if (*b == NULL)
+		return ;
 	firstb = *b;
 	*b = (*b)->next;
 	firstb->next = *a;
@@ -27,6 +29,8 @@ void	pb(t_list **a, t_list **b)
 {
 	t_list	*firsta;
 
+	if (*a == NULL)
+		return ;
 	firsta = *a;
 	*a = (*a)->next;
 	firsta->next = *b;
