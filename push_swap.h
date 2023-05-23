@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:59:01 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/23 01:19:03 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 04:18:39 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 # include <unistd.h>
 # include "printf/ft_printf.h"
 # include "printf/libft/libft.h"
+
+typedef struct s_list
+{
+	int				content;
+	char			binary[33];
+	struct s_list	*next;
+}					t_list;
 
 //parsing
 int		check_errors(int argc, char *argv[], int i);
@@ -52,11 +59,21 @@ void	pa(t_list **a, t_list **b);
 void	pb(t_list **a, t_list **b);
 
 //sorting_utilc
-int	is_sorted(t_list *a);
-int count_digits(int max_value);
-int find_max(t_list *stack);
+int		is_sorted(t_list *a);
+int	list_len(t_list *list);
+
+//list
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstnew(int content);
+char	*binconvers(unsigned int content, char *args, int negativ_or_not);
+t_list	*int_to_index(t_list *list, t_list *list2);
+int		indexation(t_list *list, t_list *list2);
 
 //sorting
-
+void	two(t_list **a);
+void	three(t_list **a);
+void	radix_sort(t_list **a, t_list **b);
+void	push_swap(t_list **a, t_list **b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 18:27:13 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/23 01:18:12 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 02:18:14 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa(t_list **a, int i)
 {
-	void	*temp;
+	int	temp;
 
 	if (*a == NULL || (*a)->next == NULL)
 		return ;
@@ -27,7 +27,7 @@ void	sa(t_list **a, int i)
 
 void	sb(t_list **b, int i)
 {
-	void	*temp;
+	int	temp;
 
 	if (*b == NULL || (*b)->next == NULL)
 		return ;

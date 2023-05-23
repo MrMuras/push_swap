@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:00:08 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/22 19:22:04 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 04:27:25 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	check_errors(int argc, char *argv[], int i)
 	int		j;
 	long	num;
 
-	ft_printf("argc: %d \n", argc);
 	while (i < argc)
 	{
 		j = 0;
@@ -68,23 +67,6 @@ int	number_of_strings(char **ss)
 	while (ss[i])
 		i++;
 	return (i);
-}
-
-t_list	*create_list(int argc, char **args)
-{
-	t_list	*a;
-	int		i;
-	int		*num;
-
-	a = NULL;
-	i = 0;
-	while (i < argc)
-	{
-		num = malloc(sizeof(int));
-		*num = ft_atoi(args[i++]);
-		ft_lstadd_back(&a, ft_lstnew((void *)num));
-	}
-	return (a);
 }
 
 int	ft_str_is_numeric(char *str)
