@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:59:04 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/23 05:28:47 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 19:35:16 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int	main(int argc, char *argv[])
 	temp = create_list(argc, argv);
 	a = int_to_index(temp, temp);
 	free_list(temp);
-	free_double_array(argc, args);
+	if (argc < 2)
+		free_double_array(argc, args);
 	push_swap(&a, &b);
 	freeab(&a, &b);
 	return (0);

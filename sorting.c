@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:29:26 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/23 05:29:14 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:23:37 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,26 +50,26 @@ void	radix_sort(t_list **a, t_list **b)
 {
 	int	i;
 	int	j;
+	int	max_digits;
 	int	size;
 
-	i = 0;
+	max_digits = 0;
 	size = list_len(*a);
-	if (is_sorted(*a))
-	{
-		ft_printf("The list is sorted already!\n");
-		return ;
-	}
-	while (!is_sorted(*a))
+	while (((size - 1) >> max_digits) != 0)
+		max_digits++;
+	i = 0;
+	while (i < max_digits)
 	{
 		j = 0;
-		while (j++ < size)
+		while (j < size)
 		{
 			if ((((*a)->content >> i) & 1) == 1)
 				ra(a, 1);
 			else
 				pb(a, b);
+			j++;
 		}
-		while (b)
+		while (*b)
 			pa(a, b);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: amurawsk <amurawsk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 21:15:46 by amurawsk          #+#    #+#             */
-/*   Updated: 2023/05/23 04:12:13 by amurawsk         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:09:59 by amurawsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	is_sorted(t_list *a)
 {
-	while (a && a->next)
+	if (a && a->next)
 	{
-		if (a->content < a->next->content)
+		if (a->content > a->next->content)
 			return (0);
-		a = a->next;
+		return (is_sorted(a->next) * 1);
 	}
 	return (1);
 }
